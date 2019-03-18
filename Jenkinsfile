@@ -30,10 +30,6 @@ node {
 
         sh 'npm install'
     
-    stage "testando"
-
-        sh 'ng test'
-    
     stage "Buidando Aplicação"
     
         sh 'ng build'
