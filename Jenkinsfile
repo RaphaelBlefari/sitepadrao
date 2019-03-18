@@ -46,7 +46,7 @@ node {
 
         input "Deploy to PROD?"
         customImage.push('latest')
-        sh "kubectl apply -f https://raw.githubusercontent.com/RaphaelBlefari/${appName}/master/${appName}.yaml"
-        sh "kubectl set image deployment app app=${imageName} --record"
+        // sh "kubectl apply -f https://raw.githubusercontent.com/RaphaelBlefari/${appName}/master/${appName}.yaml"
+        sh "kubectl set image deployment ${appName} app=${imageName} --record"
         sh "kubectl rollout status deployment/${appName}"
 }
